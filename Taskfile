@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+function help {
+    echo "$0 <task> <args>"
+    echo "Tasks:"
+    compgen -A function | cat -n
+}
+
+# Import .env file as environment variables
+# shellcheck disable=SC2046
+[ -f .env ] && export $(grep -v '^#' .env | xargs -d '\n')
+
+##########
+# Start task definitions
+
+serve() {
+  python -m http.server
+}
+
+# End task definitions
+##########
+
+"${@:-help}"
+
+# Unset all environment variables from .env file loaded at beginning
+# shellcheck disable=SC2046
+[ -f .env ] && unset $(grep -v '^#' .env | sed -E 's/(.*)=.*/\1/' | xargs)

@@ -1,5 +1,78 @@
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Majeggstic Welcome Templates</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <script src="index.js" defer></script>
+  </head>
   <body>
-    hi
+    <h1>Majeggstic Welcome Templater</h1>
+    <main class="column-split">
+      <form id="options" autocomplete="off">
+        <section id="ids-entry">
+          <label for="discord-ids">Discord IDs, one per line</label>
+          <textarea
+            name="discord-ids"
+            id="discord-ids"
+            class="preview"
+          ></textarea>
+        </section>
+
+        <fieldset id="interests">
+          <legend>Interested in?</legend>
+
+          <div>
+            <input
+              type="checkbox"
+              id="interest-casual"
+              name="interest"
+              value="casual"
+              class="preview"
+            />
+            <label for="interest-casual">Casual Runs</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="interest-anygrade"
+              name="interest"
+              value="anygrade"
+              class="preview"
+            />
+            <label for="interest-anygrade">Anygrade Buddy Runs</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="interest-fast"
+              name="interest"
+              value="fast"
+              class="preview"
+            />
+            <label for="interest-fast">Fast Runs</label>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              id="interest-speed"
+              name="interest"
+              value="speed"
+              class="preview"
+            />
+            <label for="interest-speed">Speed Runs</label>
+          </div>
+        </fieldset>
+
+        <button id="copy" name="copy">Copy</button>
+      </form>
+
+      <section id="preview"></section>
+    </main>
   </body>
 </html>
