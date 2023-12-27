@@ -47,7 +47,7 @@
     document.body.removeChild(textArea);
     return success;
   };
-  const extractDiscordIds = (text) => text.match(/\d{17,}/g);
+  const extractDiscordIds = (text) => text.match(/\d{17,}/g).join('\n');
   const peasantMode = () => document.getElementById("peasant").checked;
 
   const runTypes = {
