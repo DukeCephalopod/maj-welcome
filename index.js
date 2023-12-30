@@ -57,7 +57,7 @@
       link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
     },
     anygrade: {
-      emoji: "<:grade_any:1131326114736898079>",
+      emoji: "<:grade_any:1131340627171365027>",
       name: "Any Grade Buddy",
       link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292779820654642",
     },
