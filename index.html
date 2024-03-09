@@ -13,12 +13,15 @@
     <main class="column-split">
       <form id="options" autocomplete="off">
         <section id="ids-entry">
-          <label for="discord-ids">Discord IDs, one per line</label>
+          <label for="discord-ids">Text containing Discord IDs</label>
           <textarea
             name="discord-ids"
             id="discord-ids"
             class="preview"
+            rows="6"
+            cols="50"
           ></textarea>
+          <button id="extract">Extract</button>
         </section>
 
         <fieldset id="interests">

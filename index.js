@@ -47,6 +47,8 @@
     document.body.removeChild(textArea);
     return success;
   };
+  const extractDiscordIds = (text) => text.match(/\d{17,}/g);
+
   const runTypes = {
     casual: {
       emoji: "<:Majeggstic:849350424712839168>",
@@ -138,5 +140,12 @@
     } else {
       fallbackCopy(text);
     }
+  });
+
+  document.getElementById("extract").addEventListener("click", (event) => {
+    event.preventDefault();
+    const textarea = document.getElementById("discord-ids");
+    textarea.value = extractDiscordIds(textarea.value);
+    generatePreview();
   });
 })();
