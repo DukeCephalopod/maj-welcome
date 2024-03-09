@@ -48,6 +48,7 @@
     return success;
   };
   const extractDiscordIds = (text) => text.match(/\d{17,}/g);
+  const peasantMode = () => document.getElementById("peasant").checked;
 
   const runTypes = {
     casual: {
@@ -75,6 +76,8 @@
   const generatePreview = () => {
     const mentions = getIDs().map((x) => `<@${x}>`);
     const you = mentions.length > 1 ? "y'all" : "you";
+
+    const emoji = peasantMode() ? "🙂" : "<a:ChickenDance:863490801962844200>";
     const basicWelcome = [
       `Welcome ${oxfordComma(mentions)}!`,
       "",
@@ -84,7 +87,7 @@
       "Also take a look into the following thread for guides and useful links and information!",
       "**[Cirias amazing infographics and other nice things](<https://discord.com/channels/455380663013736479/1121015323005554808>)**",
       "",
-      `And of course we are happy to answer any questions ${you} might have! You can just type **‘mj-support’** (without quotes) in the chat and we will be there to help you out! <a:ChickenDance:863490801962844200>`,
+      `And of course we are happy to answer any questions ${you} might have! You can just type **‘mj-support’** (without quotes) in the chat and we will be there to help you out! ${emoji}`,
       "",
     ].join("\n");
     const interests = getInterests();
