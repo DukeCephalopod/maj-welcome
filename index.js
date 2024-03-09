@@ -47,7 +47,7 @@
     document.body.removeChild(textArea);
     return success;
   };
-  const extractDiscordIds = (text) => text.match(/\d{17,}/g).join('\n');
+  const extractDiscordIds = (text) => text.match(/\d{17,}/g).join("\n");
   const peasantMode = () => document.getElementById("peasant").checked;
 
   const runTypes = {
@@ -95,8 +95,8 @@
       const { emoji, name, link } = runTypes[interest];
       const stated = idx > 0 ? "also stated" : "stated";
       return [
-        `### In your recruitment you ${stated} that you are interested in our **${emoji} ${name} Runs ${emoji}**!`,
-        `Here you can find a brief overview of how our **${name} Runs** work: ${link}`,
+        `### In your recruitment ${you} ${stated} that you are interested in our **${emoji} ${name} Runs ${emoji}**!`,
+        `Here you can find a brief overview of our **${name} Runs**: ${link}`,
         "",
       ].join("\n");
     });
