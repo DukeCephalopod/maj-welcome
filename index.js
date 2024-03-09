@@ -15,6 +15,14 @@
     strings[strings.length - 1] = `and ${strings[strings.length - 1]}`;
     return strings.join(", ");
   };
+  const escapeHtml = (unsafe) => {
+    return unsafe
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  };
   const fallbackCopy = (text) => {
     var textArea = document.createElement("textarea");
     textArea.value = text;
@@ -82,8 +90,8 @@
       const { emoji, name, link } = runTypes[interest];
       const stated = idx > 0 ? "also stated" : "stated";
       return [
-        `### In your recruitment you ${stated} that you are interested in our **${emoji} ${name} ${emoji}**!`,
-        `Here you can find a brief overview of how our **${name}** work: ${link}`,
+        `### In your recruitment you ${stated} that you are interested in our **${emoji} ${name} Runs ${emoji}**!`,
+        `Here you can find a brief overview of how our **${name} Runs** work: ${link}`,
         "",
       ].join("\n");
     });
@@ -103,9 +111,9 @@
 
     document.getElementById("preview").innerHTML = [
       "<pre>",
-      basicWelcome,
-      ...interestAdditions,
-      ...gainAccess,
+      escapeHtml(basicWelcome),
+      ...interestAdditions.map((x) => escapeHtml(x)),
+      ...gainAccess.map((x) => escapeHtml(x)),
       "</pre>",
     ].join("\n");
   };
