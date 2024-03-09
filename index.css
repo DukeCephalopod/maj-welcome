@@ -1,0 +1,18 @@
+.column-split {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  margin-bottom: 1rem;
+}
+
+#ids-entry {
+  display: flex;
+  flex-direction: column;
+}
+
+#interest {
+  display: flex;
+  flex-direction: column;
+}
