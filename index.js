@@ -51,14 +51,14 @@
   const peasantMode = () => document.getElementById("peasant").checked;
 
   const runTypes = {
-    casual: {
-      emoji: "<:Majeggstic:849350424712839168>",
-      name: "Casual",
+    normal: {
+      emoji: "<:grade_any:1131340627171365027>",
+      name: "Normal",
       link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
     },
-    anygrade: {
-      emoji: "<:grade_any:1131340627171365027>",
-      name: "Any Grade Buddy",
+    classic: {
+      emoji: "<:grade_aaa:1116157518138322964>",
+      name: "Classic",
       link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292779820654642",
     },
     fast: {
@@ -104,7 +104,7 @@
         "Since your artifacts have already been confirmed by a recruiter, please do the following to gain access to our runs:",
         "* **AFTER** using /join, please type **‘mj-support’** (without quotes) in any of the chats and we can give you the *Maj Fast Lane* role! You will also gain access to the normal Majeggstics channels automatically with /join.",
       ];
-    } else if (interests.includes("casual") || interests.includes("anygrade")) {
+    } else if (interests.includes("normal") || interests.includes("classic")) {
       gainAccess = [
         "",
         "Please do the following to gain access to our runs:",
