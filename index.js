@@ -115,7 +115,7 @@
     const emoji = peasantMode() ? "🙂" : "<a:ChickenDance:863490801962844200>";
     const mjSupport = [
       "",
-      `And of course we are happy to answer any questions ${you} might have! ${emoji} For general questions you can use the https://discord.com/channels/455380663013736479/1103307141311381594; for contract-specific advice just type **‘mj-support’** (without quotes) in the chat and we'll be there to help as soon as we can. You'll get a confirmation that looks like this:`,
+      `And of course we are happy to answer any questions ${you} might have! ${emoji} For general questions you can ask in https://discord.com/channels/455380663013736479/1103307141311381594; for contract-specific advice just type **‘mj-support’** (without quotes) in the chat and we'll be there to help as soon as we can. You'll get a confirmation that looks like this:`,
     ];
 
     document.getElementById("preview").innerHTML = [
