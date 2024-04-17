@@ -1,94 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Majeggstic Welcome Templates</title>
-    <link rel="stylesheet" href="index.css" />
 
-    <script src="index.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1><img src="maj.png" />Majeggstic Welcome Templater</h1>
-    </header>
-    <main class="column-split">
-      <form id="options" autocomplete="off">
-        <section id="ids-entry">
-          <label for="discord-ids">Text containing Discord IDs</label>
-          <textarea
-            name="discord-ids"
-            id="discord-ids"
-            class="preview"
-            rows="6"
-            cols="50"
-          ></textarea>
-          <button id="extract">Extract</button>
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Majeggstic Welcome Templates</title>
+  <link rel="stylesheet" href="index.css" />
 
-        <fieldset id="interests">
-          <legend>Interested in?</legend>
+  <script src="index.js" defer></script>
+</head>
 
-          <div>
-            <input
-              type="checkbox"
-              id="interest-normal"
-              name="interest"
-              value="normal"
-              class="preview"
-            />
-            <label for="interest-normal">Normal Runs</label>
-          </div>
+<body>
+  <header>
+    <h1><img src="maj.png" />Majeggstic Welcome Templater</h1>
+  </header>
+  <main class="column-split">
+    <form id="options" autocomplete="off">
+      <section id="ids-entry">
+        <label for="discord-ids">Text containing Discord IDs</label>
+        <textarea name="discord-ids" id="discord-ids" class="preview" rows="6" cols="50"></textarea>
+        <button id="extract" class="primary">Extract</button>
+      </section>
 
-          <div>
-            <input
-              type="checkbox"
-              id="interest-classic"
-              name="interest"
-              value="classic"
-              class="preview"
-            />
-            <label for="interest-classic">Classic Runs</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              id="interest-fast"
-              name="interest"
-              value="fast"
-              class="preview"
-            />
-            <label for="interest-fast">Fast Runs</label>
-          </div>
-
-          <div>
-            <input
-              type="checkbox"
-              id="interest-speed"
-              name="interest"
-              value="speed"
-              class="preview"
-            />
-            <label for="interest-speed">Speed Runs</label>
-          </div>
-        </fieldset>
+      <fieldset id="interests">
+        <legend>Interested in?</legend>
 
         <div>
-          <input
-            type="checkbox"
-            id="peasant"
-            name="peasant"
-            value="peasant"
-            class="preview"
-          />
-          <label for="peasant">Peasant Mode</label>
+          <input type="checkbox" id="interest-normal" name="interest" value="normal" class="preview" />
+          <label for="interest-normal">Normal Runs</label>
         </div>
 
-        <button id="copy" name="copy">Copy</button>
-      </form>
+        <div>
+          <input type="checkbox" id="interest-classic" name="interest" value="classic" class="preview" />
+          <label for="interest-classic">Classic Runs</label>
+        </div>
 
-      <section id="preview"></section>
-    </main>
-  </body>
+        <div>
+          <input type="checkbox" id="interest-fast" name="interest" value="fast" class="preview" />
+          <label for="interest-fast">Fast Runs</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="interest-speed" name="interest" value="speed" class="preview" />
+          <label for="interest-speed">Speed Runs</label>
+        </div>
+      </fieldset>
+
+      <fieldset id="tweaks">
+        <legend>Tweaks</legend>
+        <div>
+          <input type="checkbox" id="peasant" name="peasant" value="peasant" class="preview" />
+          <label for="peasant">Peasant Mode</label>
+          <span class="info">
+            <button>(?)</button>
+            <span>Replace animated :chickendance: with simple 🙂</span>
+          </span>
+        </div>
+
+        <div>
+          <input type="checkbox" id="yeehaw" name="yeehaw" value="yeehaw" class="preview" checked />
+          <label for="yeehaw">Yeehaw Mode</label>
+          <span class="info">
+            <button>(?)</button>
+            <span>Replace "you" with "y'all" for multiwelcomes</span>
+          </span>
+        </div>
+
+        <div>
+          <button id="spear" name="spear">Hi I'm Spear</button>
+        </div>
+      </fieldset>
+
+      <button id="copy" name="copy" class="primary">Copy</button>
+    </form>
+
+    <section id="preview"></section>
+  </main>
+</body>
+
 </html>

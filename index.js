@@ -1,20 +1,27 @@
 (() => {
-  const getIDs = () => document.getElementById("discord-ids").value.split("\n");
+  const $ = (selector) =>
+    selector.match(/^#\S+$/) // "just an ID"
+      ? document.getElementById(selector.slice(1)) // strip # from front
+      : document.querySelectorAll(selector);
+
+  const getIDs = () => $("#discord-ids").value.split("\n");
   const getInterests = () =>
     Array.from(
-      document
-        .getElementById("interests")
-        .querySelectorAll('input[name="interest"]:checked'),
+      $("#interests").querySelectorAll('input[name="interest"]:checked'),
     ).map((el) => el.value);
-  const oxfordComma = (strings) => {
-    if (strings.length === 1) {
-      return strings[0];
-    } else if (strings.length === 2) {
-      return strings.join(" and ");
+
+  // oxfordComma(['a']) => 'a'
+  // oxfordComma(['a', 'b']) => 'a and b'
+  // oxfordComma(['a', 'b', 'c']) => 'a, b, and c'
+  const oxfordComma = (strs) => {
+    if (strs.length > 2) {
+      const l = strs.length - 1;
+      strs.splice(0, l, strs.slice(0, l).join(", "));
     }
-    strings[strings.length - 1] = `and ${strings[strings.length - 1]}`;
-    return strings.join(", ");
+    return strs.join(" and ");
   };
+
+  // non-exhaustive, but works for the specific characters that appear in preview
   const escapeHtml = (unsafe) => {
     return unsafe
       .replaceAll("&", "&amp;")
@@ -23,8 +30,10 @@
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
   };
+
+  // junky ancient copying code for browsers that don't support navigator.clipboard
   const fallbackCopy = (text) => {
-    var textArea = document.createElement("textarea");
+    const textArea = document.createElement("textarea");
     textArea.value = text;
 
     // Avoid scrolling to bottom
@@ -47,35 +56,43 @@
     document.body.removeChild(textArea);
     return success;
   };
-  const extractDiscordIds = (text) => text.match(/\d{17,}/g).join("\n");
-  const peasantMode = () => document.getElementById("peasant").checked;
+
+  // any sequence of at least 17 digits gets extracted
+  const extractDiscordIds = (text) => text?.match(/\d{17,}/g)?.join("\n") || "";
+
+  const peasantMode = () => $("#peasant").checked;
+  const yeehawMode = () => $("#yeehaw").checked;
 
   const runTypes = {
     normal: {
       emoji: "<:grade_any:1131340627171365027>",
       name: "Normal",
-      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
+      link:
+        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
     },
     classic: {
       emoji: "<:grade_aaa:1116157518138322964>",
       name: "Classic",
-      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292779820654642",
+      link:
+        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292779820654642",
     },
     fast: {
       emoji: "🏎️",
       name: "Fast",
-      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394",
+      link:
+        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394",
     },
     speed: {
       emoji: "🚀",
       name: "Speed",
-      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
+      link:
+        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
     },
   };
 
   const generatePreview = () => {
     const mentions = getIDs().map((x) => `<@${x}>`);
-    const you = mentions.length > 1 ? "y'all" : "you";
+    const you = yeehawMode() && mentions.length > 1 ? "y'all" : "you";
 
     const basicWelcome = [
       `Welcome ${oxfordComma(mentions)}!`,
@@ -118,7 +135,7 @@
       `And of course we are happy to answer any questions ${you} might have! ${emoji} For general questions you can ask in https://discord.com/channels/455380663013736479/1103307141311381594; for contract-specific advice just type **‘mj-support’** (without quotes) in the chat and we'll be there to help as soon as we can. You'll get a confirmation that looks like this:`,
     ];
 
-    document.getElementById("preview").innerHTML = [
+    $("#preview").innerHTML = [
       "<pre>",
       ...basicWelcome.map(escapeHtml),
       ...interestAdditions.map(escapeHtml),
@@ -128,13 +145,13 @@
     ].join("\n");
   };
 
-  Array.from(document.getElementsByClassName("preview")).forEach((input) => {
+  Array.from($(".preview")).forEach((input) => {
     input.addEventListener("input", generatePreview);
   });
 
-  document.getElementById("copy").addEventListener("click", (event) => {
+  $("#copy").addEventListener("click", (event) => {
     event.preventDefault();
-    const text = document.getElementById("preview").textContent;
+    const text = $("#preview").textContent;
     if (navigator.clipboard) {
       navigator.clipboard
         .writeText(text)
@@ -150,10 +167,25 @@
     }
   });
 
-  document.getElementById("extract").addEventListener("click", (event) => {
+  $("#extract").addEventListener("click", (event) => {
     event.preventDefault();
-    const textarea = document.getElementById("discord-ids");
+    const textarea = $("#discord-ids");
     textarea.value = extractDiscordIds(textarea.value);
     generatePreview();
+  });
+
+  $("#spear").addEventListener("click", (event) => {
+    event.preventDefault();
+    const hue = Math.floor(Math.random() * 36) * 10;
+    document.body.style.backgroundColor = `hsl(${hue}deg 100% 96.67%)`;
+  });
+
+  $(".info button").forEach((button) => {
+    button.title = button.nextElementSibling.innerText;
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const span = event.target.nextElementSibling;
+      span.style.display = span.checkVisibility() ? "none" : "inline";
+    });
   });
 })();
