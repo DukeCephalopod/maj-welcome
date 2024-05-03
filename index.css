@@ -1,7 +1,10 @@
 body {
   margin: 0 auto;
   max-width: 800px;
+  height: 100vh;
   background: #ffe;
+  display: flex;
+  flex-direction: column;
 }
 
 header img {
@@ -12,6 +15,10 @@ header img {
 
 header h1 {
   line-height: 1.3;
+}
+
+footer {
+  margin-bottom: 1rem;
 }
 
 textarea {
@@ -26,6 +33,8 @@ button.primary {
 .column-split {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
 }
 
 form {
