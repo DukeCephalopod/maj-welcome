@@ -119,7 +119,7 @@
       gainAccess = [
         "",
         "Please do the following to gain access to our runs:",
-        "* **AFTER** using /join please direct message <@328925472757121026> to get the *Maj Fast Lane* role and access to the contract channel. You will also gain access to the normal Majeggstics channels automatically with /join.",
+        "* **AFTER** using /join please direct message `@lemongrabs_ur_balls` to get the *Maj Fast Lane* role and access to the contract channel. You will also gain access to the normal Majeggstics channels automatically with /join.",
       ];
     } else if (interests.includes("normal") || interests.includes("classic")) {
       gainAccess = [
