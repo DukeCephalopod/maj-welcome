@@ -70,23 +70,11 @@
       link:
         "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
     },
-    classic: {
-      emoji: "<:grade_aaa:1116157518138322964>",
-      name: "Classic",
-      link:
-        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292779820654642",
-    },
     fast: {
       emoji: "🏎️",
-      name: "Fast",
+      name: "Fast and Speed",
       link:
-        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394",
-    },
-    speed: {
-      emoji: "🚀",
-      name: "Speed",
-      link:
-        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
+        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394 and https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
     },
   };
 
