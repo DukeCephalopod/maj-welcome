@@ -57,8 +57,12 @@
     return success;
   };
 
-  // any sequence of at least 17 digits gets extracted
-  const extractDiscordIds = (text) => text?.match(/\d{17,}/g)?.join("\n") || "";
+  // any sequence of at least 17 digits that is not in an emoji
+  const extractDiscordIds = (text) => {
+    const withoutEmoji = text.replace(/<:[^:]+:\d+>/, "");
+
+    return withoutEmoji?.match(/\d{17,}/g)?.join("\n") || "";
+  };
 
   const peasantMode = () => $("#peasant").checked;
   const yeehawMode = () => $("#yeehaw").checked;
@@ -67,14 +71,12 @@
     normal: {
       emoji: "<:grade_any:1131340627171365027>",
       name: "Normal",
-      link:
-        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
+      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
     },
     fast: {
       emoji: "🏎️",
       name: "Fast and Speed",
-      link:
-        "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394 and https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
+      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394 and https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
     },
   };
 
