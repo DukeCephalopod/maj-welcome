@@ -88,7 +88,7 @@
       `Welcome ${oxfordComma(mentions)}!`,
       "",
       `We are happy to have ${you} in **The Majeggstics**, this thread contains some important information but is also a place to ask questions directly to Majeggstics staff regarding the group. When you have time, please read the information in the pins and the following guideline!`,
-      "**[Majeggstics Rulebook](<https://docs.google.com/document/d/14CcDG6vY0mSFv2LW-14sWIBlHQap9PtpAgRD4dGSNMs/edit>)**",
+      "**[Majeggstics Rulebook](<https://majeggstics.com/guide/>)**",
       "",
       "Also take a look into the following thread for guides and useful links and information!",
       "**[Cirias amazing infographics and other nice things](<https://discord.com/channels/455380663013736479/1121015323005554808>)**",
