@@ -71,12 +71,12 @@
     normal: {
       emoji: "<:grade_any:1131340627171365027>",
       name: "Normal",
-      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292737089081375",
+      link: "https://discord.com/channels/455380663013736479/1325086567466799104/1325087103956160593",
     },
     fast: {
       emoji: "🏎️",
       name: "Fast and Speed",
-      link: "https://discord.com/channels/455380663013736479/1128601421407854643/1174292810611044394 and https://discord.com/channels/455380663013736479/1128601421407854643/1174292837723017268",
+      link: "https://discord.com/channels/455380663013736479/1325086567466799104/1325087145076981821",
     },
   };
 
