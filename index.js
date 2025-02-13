@@ -109,7 +109,7 @@
       gainAccess = [
         "",
         "Please do the following to gain access to our runs:",
-        "**FASTLANE APPLICATIONS ARE CURRENTLY ON HOLD! They will reopen again soon, we will keep you updated in https://discord.com/channels/455380663013736479/1077337880797655103.",
+        "**FASTLANE APPLICATIONS ARE CURRENTLY ON HOLD! They will reopen again soon, we will keep you updated in https://discord.com/channels/455380663013736479/1077337880797655103.**",
         "* ~~**AFTER** using /join please direct message <@328925472757121026> to get the *Maj Fast Lane* role and access to the contract channel.~~ ",
         "* Consider joining **Best Fit** runs while you wait for Fastlane access. **AFTER** using /join you will gain access to the normal Majeggstics channels automatically.",
       ];
